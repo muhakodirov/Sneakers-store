@@ -27,7 +27,7 @@ export function Dropdown() {
         <>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button variant="outline">Marken</Button>
+                    <Button className="hover:text-blue-600" variant="outline">Marken</Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className=" w-52">
                     <DropdownMenuLabel>Alle Marken</DropdownMenuLabel>

@@ -3,6 +3,7 @@ import './embla.css'
 import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
+import Link from 'next/link'
 // import {
 //     NextButton,
 //     PrevButton,
@@ -68,13 +69,18 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     return (
         <div className="embla">
             <div className="embla__viewport" ref={emblaRef}>
+                
                 <div className="embla__container">
                     {slides.map((index) => (
+                        
                         <div className="embla__slide" key={index}>
-                            <div className="embla__slide__number">
-                                <span>{index + 1}</span>
-                            </div>
+                            {/* <Link href='/'> */}
+                                 <div className="embla__slide__number">
+                                        <span>{index + 1}</span>
+                                 </div>
+                            {/* </Link> */}
                         </div>
+
                     ))}
                 </div>
             </div>

@@ -24,7 +24,7 @@ function Header() {
         <>
             <header className="flex p-2 mt-5 justify-between items-center lg:p-4">
                 <h1 className="text-4xl text-gray-950 font-extrabold cursor-pointer">
-                    S&S.
+                   <Link href="/"> S&S. </Link>
                 </h1>
 
                 <div className='flex items-center space-x-4 lg:hidden'>
@@ -33,19 +33,18 @@ function Header() {
                     <IoMenu className='absolut cursor-pointer' onClick={handleMenuClicked} />
                 </div>
 
-                <nav className='hidden lg:inline-flex items-center justify-center'>
-                    <ul className="flex space-x-14">
+                <nav className='hidden  lg:inline-flex items-center justify-center'>
+                    <ul className=" flex space-x-14">
                         <li>
-                            <Link className='text-red-700 font-bold' href="/">SALE🔥</Link>
+                            <Link className='text-red-700 font-bold' href="/sale">SALE🔥</Link>
                         </li>
 
                         <Dropdown />
-
                         <li>
-                            <Link href="/about">Warenkorb </Link>
+                            <Link className='hover:text-blue-600' href="/shopping-cart">Warenkorb (0) </Link>
                         </li>
                         <li>
-                            <Link href="/about"> Lieblings ❤️ </Link>
+                            <Link className='hover:text-blue-600' href="/favourites"> Favoriten ❤️ </Link>
                         </li>
                     </ul>
                 </nav>
@@ -54,7 +53,7 @@ function Header() {
             {menuClicked &&
                 // <div className='relative'>
                 <div ref={dropdownRef} className=' border backdrop-blur-lg rounded-sm fixed right-5 top-20 p-4 text-xl text-left z-50'>
-                    <Link className='font-bold' href="/">SALE🔥</Link>
+                    <Link className='font-bold' href="/sale">SALE🔥</Link>
                     <div className='space-y-2 mt-3'>
                         <details className='' open={false}>
                             <summary className='font-bold'> Damen </summary>
