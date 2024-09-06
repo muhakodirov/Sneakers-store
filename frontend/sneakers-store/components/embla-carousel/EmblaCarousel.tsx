@@ -4,6 +4,7 @@ import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
 import Link from 'next/link'
+import Image from 'next/image'
 // import {
 //     NextButton,
 //     PrevButton,
@@ -74,11 +75,15 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     {slides.map((index) => (
                         
                         <div className="embla__slide" key={index}>
-                            {/* <Link href='/'> */}
                                  <div className="embla__slide__number">
-                                        <span>{index + 1}</span>
+                                        <Image
+                                              className='rounded-full'
+                                              src="/image.webp"
+                                              width={500}
+                                              height={500}
+                                              alt="Picture of the author"
+                                            />
                                  </div>
-                            {/* </Link> */}
                         </div>
 
                     ))}

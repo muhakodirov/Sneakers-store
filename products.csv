@@ -1,0 +1,41 @@
+name;description;price;category;stock;imageUrl;size;men;women;sale
+Air Max 270;Nike Air Max 270 for men;150;nike;100;https://s3.amazonaws.com/mybucket/air-max-270.jpg;[38,39,40,41,42,43];true;false;false
+Air Max 90;Nike Air Max 90 for women;140;nike;150;https://s3.amazonaws.com/mybucket/air-max-90.jpg;[36,37,38,39,40];false;true;false
+UltraBoost 21;Adidas UltraBoost 21 for men;180;adidas;200;https://s3.amazonaws.com/mybucket/ultraboost-21.jpg;[39,40,41,42,43];true;false;false
+UltraBoost 21;Adidas UltraBoost 21 for women;180;adidas;180;https://s3.amazonaws.com/mybucket/ultraboost-21-women.jpg;[36,37,38,39,40];false;true;false
+React Infinity Run;Nike React Infinity Run for men;160;nike;120;https://s3.amazonaws.com/mybucket/react-infinity-run.jpg;[38,39,40,41,42,43];true;false;false
+React Infinity Run;Nike React Infinity Run for women;160;nike;130;https://s3.amazonaws.com/mybucket/react-infinity-run-women.jpg;[36,37,38,39,40];false;true;false
+Fresh Foam 1080;New Balance Fresh Foam 1080 for men;170;new-balance;110;https://s3.amazonaws.com/mybucket/fresh-foam-1080.jpg;[39,40,41,42,43];true;false;false
+Fresh Foam 1080;New Balance Fresh Foam 1080 for women;170;new-balance;130;https://s3.amazonaws.com/mybucket/fresh-foam-1080-women.jpg;[36,37,38,39,40];false;true;false
+Suede Classic;Puma Suede Classic for men;120;puma;90;https://s3.amazonaws.com/mybucket/suede-classic.jpg;[38,39,40,41,42];true;false;false
+Suede Classic;Puma Suede Classic for women;120;puma;100;https://s3.amazonaws.com/mybucket/suede-classic-women.jpg;[36,37,38,39,40];false;true;false
+Air Zoom Pegasus;Nike Air Zoom Pegasus for men;130;nike;160;https://s3.amazonaws.com/mybucket/air-zoom-pegasus.jpg;[38,39,40,41,42,43];true;false;false
+Air Zoom Pegasus;Nike Air Zoom Pegasus for women;130;nike;170;https://s3.amazonaws.com/mybucket/air-zoom-pegasus-women.jpg;[36,37,38,39,40];false;true;false
+Cloudstratus;On Cloudstratus for men;160;puma;140;https://s3.amazonaws.com/mybucket/cloudstratus.jpg;[39,40,41,42,43];true;false;false
+Cloudstratus;On Cloudstratus for women;160;puma;150;https://s3.amazonaws.com/mybucket/cloudstratus-women.jpg;[36,37,38,39,40];false;true;false
+Gel-Kayano 28;Asics Gel-Kayano 28 for men;150;adidas;130;https://s3.amazonaws.com/mybucket/gel-kayano-28.jpg;[39,40,41,42,43];true;false;false
+Gel-Kayano 28;Asics Gel-Kayano 28 for women;150;nike;140;https://s3.amazonaws.com/mybucket/gel-kayano-28-women.jpg;[36,37,38,39,40];false;true;false
+Wave Rider 25;Mizuno Wave Rider 25 for men;140;adidas;120;https://s3.amazonaws.com/mybucket/wave-rider-25.jpg;[38,39,40,41,42,43];true;false;true
+Wave Rider 25;Mizuno Wave Rider 25 for women;140;adidas;130;https://s3.amazonaws.com/mybucket/wave-rider-25-women.jpg;[36,37,38,39,40];false;true;false
+Rival Fly;Nike Rival Fly for men;120;nike;150;https://s3.amazonaws.com/mybucket/rival-fly.jpg;[39,40,41,42,43];true;false;false
+Rival Fly;Nike Rival Fly for women;120;nike;160;https://s3.amazonaws.com/mybucket/rival-fly-women.jpg;[36,37,38,39,40];false;true;false
+Free RN 5.0;Nike Free RN 5.0 for men;110;nike;180;https://s3.amazonaws.com/mybucket/free-rn-50.jpg;[38,39,40,41,42];true;false;false
+Free RN 5.0;Nike Free RN 5.0 for women;110;nike;190;https://s3.amazonaws.com/mybucket/free-rn-50-women.jpg;[36,37,38,39,40];false;true;false
+Zoom Fly 4;Nike Zoom Fly 4 for men;170;nike;140;https://s3.amazonaws.com/mybucket/zoom-fly-4.jpg;[39,40,41,42,43];true;false;true
+Zoom Fly 4;Nike Zoom Fly 4 for women;170;nike;150;https://s3.amazonaws.com/mybucket/zoom-fly-4-women.jpg;[36,37,38,39,40];false;true;false
+VaporMax Flyknit;Nike Air VaporMax Flyknit for men;220;nike;90;https://s3.amazonaws.com/mybucket/vapormax-flyknit.jpg;[38,39,40,41,42,43];true;false;false
+VaporMax Flyknit;Nike Air VaporMax Flyknit for women;220;nike;100;https://s3.amazonaws.com/mybucket/vapormax-flyknit-women.jpg;[36,37,38,39,40];false;true;false
+Boosted;Adidas Boosted for men;200;adidas;110;https://s3.amazonaws.com/mybucket/boosted.jpg;[39,40,41,42,43];true;false;false
+Boosted;Adidas Boosted for women;200;adidas;120;https://s3.amazonaws.com/mybucket/boosted-women.jpg;[36,37,38,39,40];false;true;false
+Predator Freak;Adidas Predator Freak for men;150;adidas;150;https://s3.amazonaws.com/mybucket/predator-freak.jpg;[38,39,40,41,42];true;false;false
+Predator Freak;Adidas Predator Freak for women;150;adidas;160;https://s3.amazonaws.com/mybucket/predator-freak-women.jpg;[36,37,38,39,40];false;true;true
+Future Rider;Puma Future Rider for men;130;puma;130;https://s3.amazonaws.com/mybucket/future-rider.jpg;[39,40,41,42,43];true;false;false
+Future Rider;Puma Future Rider for women;130;puma;140;https://s3.amazonaws.com/mybucket/future-rider-women.jpg;[36,37,38,39,40];false;true;false
+Terrex Agravic;Adidas Terrex Agravic for men;140;adidas;110;https://s3.amazonaws.com/mybucket/terrex-agravic.jpg;[39,40,41,42,43];true;false;false
+Terrex Agravic;Adidas Terrex Agravic for women;140;adidas;120;https://s3.amazonaws.com/mybucket/terrex-agravic-women.jpg;[36,37,38,39,40];false;true;false
+Roccia Vet;Salomon Roccia Vet for men;130;new-balance;100;https://s3.amazonaws.com/mybucket/roccia-vet.jpg;[39,40,41,42,43];true;false;false
+Roccia Vet;Salomon Roccia Vet for women;130;puma;110;https://s3.amazonaws.com/mybucket/roccia-vet-women.jpg;[36,37,38,39,40];false;true;false
+Rebel V2;New Balance Rebel V2 for men;160;new-balance;90;https://s3.amazonaws.com/mybucket/rebel-v2.jpg;[39,40,41,42,43];true;false;false
+Rebel V2;New Balance Rebel V2 for women;160;new-balance;100;https://s3.amazonaws.com/mybucket/rebel-v2-women.jpg;[36,37,38,39,40];false;true;false
+Onyx Runner;On Onyx Runner for men;150;adidas;120;https://s3.amazonaws.com/mybucket/onyx-runner.jpg;[39,40,41,42,43];true;false;false
+Onyx Runner;On Onyx Runner for women;150;puma;130;https://s3.amazonaws.com/mybucket/onyx-runner-women.jpg;[36,37,38,39,40];false;true;false

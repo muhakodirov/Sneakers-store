@@ -8,7 +8,7 @@ import {
     SelectValue,
   } from "@/components/ui/select"
    
-  export function SelectSize() {
+  export function SelectSize({size}:{size:number[]}) {
     return (
       <Select>
         <SelectTrigger className="w-[180px]">
@@ -16,11 +16,20 @@ import {
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value="42">42</SelectItem>
-            <SelectItem value="41">41</SelectItem>
-            <SelectItem value="40">40</SelectItem>
-            <SelectItem value="39">39</SelectItem>
-            <SelectItem value="38">38</SelectItem>
+
+             {(size?.length > 0) ?
+              	size.map((s,i) => <SelectItem key={i} value={`${s}`}> {s} </SelectItem> ) 
+                :<>
+                <SelectItem value="42">43</SelectItem>
+                <SelectItem value="42">42</SelectItem>
+                <SelectItem value="41">41</SelectItem>
+                <SelectItem value="40">40</SelectItem>
+                <SelectItem value="39">39</SelectItem>
+                <SelectItem value="38">38</SelectItem>
+                </>
+              } 
+
+
           </SelectGroup>
         </SelectContent>
       </Select>

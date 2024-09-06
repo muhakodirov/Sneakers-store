@@ -29,9 +29,9 @@ export default function Home() {
           </p>
           <CarouselComponent />
         </div>
-        <div className="flex flex-col text-center items-center space-y-4 lg:space-y-0  lg:flex-row my-52 justify-center">
-          <HomeCard title = "Herren" desc="Schuhe für Herren"/>
-          <HomeCard title = "Frauen" desc="Schuhe für Frauen"/>
+        <div className="flex flex-col text-center gap-8 items-center space-y-8 lg:space-y-0  lg:flex-row my-52 justify-center">
+          <HomeCard title = "Herren" url="/herren"/>
+          <HomeCard title = "Damen"  url="/damen"/>
         </div>
       </div>
     </>

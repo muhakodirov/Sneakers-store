@@ -9,28 +9,29 @@ const roboto = Roboto({
   display: 'swap',
 })
 
-async function getInSaleProducts() {
+async function getProducts() {
   "use server"
-  const res = await fetch("http://localhost:3000/sale/get-insale-products", {cache: "no-cache"})
+  const res = await fetch("http://localhost:3000/damen/get-products", {cache: "no-cache"})
   const data = await res.json()
   return data
 }
 
- export default async function SalePage() {
-  const {data} = await getInSaleProducts()
-  return (
-    <div className=" text-center justify-center content-center">
-        <p className={`${roboto.className} mt-24 text-5xl text-red-700`}>
-          SALE
-        </p>
 
+export default async function DamenPage() {
+  const {data} = await getProducts()
+
+  return (
+        <div className=" text-center justify-center content-center">
+           <p className={`${roboto.className} mt-24 text-5xl text-red-700`}>
+          DAMEN
+        </p>
         <div className="lg:flex mt-16 justify-center">
             <div className="lg:w-1/3">
                 <Sidebar />
             </div>
             <div className="lg:w-2/3">
             <Suspense fallback={<Loading />}>
-                <ListOfProducts shoes={data} />
+                <ListOfProducts shoes = {data} />
             </Suspense>
             </div>
         </div>
