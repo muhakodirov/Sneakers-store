@@ -1,8 +1,8 @@
 export default function Rechnung() {
   return (
-    <div className="">
-        <div className=" rounded-lg ml-10 ">
-            <div className=" text-left text-2xl text-pretty mx-5">
+    <div className="fixed right-[265px]">
+        <div className=" rounded-lg ">
+            <div className=" text-left text-xl">
                 <div className="flex justify-between my-5">
                     <p>Rabatte: </p>
                     <p className=""> 5 €</p>
@@ -21,10 +21,17 @@ export default function Rechnung() {
                 </div>
 
             </div>
-            <div className="relative">
-                <button className=' hover:bg-green-700 absolute w-full transition border rounded-lg bg-green-500'>
-                    <span>Kaufen</span>
+            <div className=" mb-11">
+                <button className=' hover:bg-green-700 h-16 w-full transition border rounded-lg bg-green-500'>
+                    <span className="text-2xl uppercase font-bold text-white">Kaufen</span>
                 </button>
+                <p className="mt-2">Zahlungsmethode:</p>
+                <div className="flex flex-wrap gap-2">
+                    <span>VISA</span>
+                    <span>MASTERCARD</span>
+                    <span>BITCOIN</span>
+                    <span>SOLANA</span>
+                </div>
             </div>
         </div>
     </div>

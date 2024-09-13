@@ -6,9 +6,11 @@ import { IoMenu } from "react-icons/io5";
 import { TiShoppingCart } from "react-icons/ti";
 import { MdFavoriteBorder } from "react-icons/md";
 import closeDropdown from '@/hooks/closeDropdown';
+import { useShopContext } from "@/context/shopContext";
 
 function Header() {
     const [menuClicked, setMenuClicked] = useState(false)
+    const { productsInCart, favorites} = useShopContext()
 
     const handleMenuClicked = () => {
         setMenuClicked(!menuClicked)
@@ -41,10 +43,10 @@ function Header() {
 
                         <Dropdown />
                         <li>
-                            <Link className='hover:text-blue-600' href="/shopping-cart">Warenkorb (0) </Link>
+                            <Link className='hover:text-blue-600' href="/shopping-cart">Warenkorb ({productsInCart.length}) </Link>
                         </li>
                         <li>
-                            <Link className='hover:text-blue-600' href="/favourites"> Favoriten ❤️ </Link>
+                            <Link className='hover:text-blue-600' href="/favourites"> {favorites.length > 0 ? 'Favoriten ❤️' : 'Favoriten' } </Link>
                         </li>
                     </ul>
                 </nav>

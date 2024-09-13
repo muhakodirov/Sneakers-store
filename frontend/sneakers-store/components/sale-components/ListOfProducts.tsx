@@ -2,7 +2,7 @@ import Link from "next/link";
 import ProductCard from "../ProductCard";
 //server-comp
 
-type SHOES = {
+export type SHOES = {
 
     _id: string,
     name: string,
@@ -19,6 +19,7 @@ type SHOES = {
 }
 
 export default async function ListOfProducts({shoes}:{shoes: SHOES[]}) {
+  console.log(shoes)
   return (
     <div className="rounded-md border bg-card text-card-foreground shadow-sm mx-3">
           <div className="flex flex-col space-y-1.5 p-6">
@@ -29,8 +30,6 @@ export default async function ListOfProducts({shoes}:{shoes: SHOES[]}) {
                                                 name={shoe.name}
                                                 price={shoe.price}
                                                 imageUrl={shoe.imageUrl}/>)  }
-                    
-                   
               </div>
           </div>
       </div>
