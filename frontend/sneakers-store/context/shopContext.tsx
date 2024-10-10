@@ -10,40 +10,60 @@ const ShopContext = createContext<any>([]);
 //     removeFromCart: (productId: SHOES["_id"]) => void
 // }
 
-export function ShopContextProvider({children}:{children:ReactNode}){
+export function ShopContextProvider({ children }: { children: ReactNode }) {
     const [favorites, setFavorites] = useState<SHOES[]>([]);
     const [productsInCart, setProductsInCart] = useState<SHOES[]>([]);
-    const [count, setCount] = useState<number>(1);
+    const [count, setCount] = useState<any>([]);
 
     const addToCart = (product: SHOES) => {
-        setProductsInCart((prevProducts)=>[...prevProducts, product])
+        setProductsInCart((prevProducts) => [...prevProducts, product])
     }
 
-    const removeFromCart = (productId:SHOES["_id"]) => {
+    const removeFromCart = (productId: SHOES["_id"]) => {
         const newProducts = productsInCart.filter(product => product._id !== productId)
         setProductsInCart(newProducts)
     }
 
-    const addToFavs = (product:SHOES) => {
+    const addToFavs = (product: SHOES) => {
         setFavorites((preFavsProducts) => [...preFavsProducts, product])
     }
 
-    const removeFromFavs = (productId:SHOES["_id"]) => {
+    const removeFromFavs = (productId: SHOES["_id"]) => {
 
         const newProducts = favorites.filter(favsProduct => favsProduct._id !== productId)
         setFavorites(newProducts)
     }
 
-    const increment = () => {
-        setCount((prevCount) => prevCount + 1)
-    }
-    const decrement = () => {
-        setCount((prevCount) => prevCount - 1)
-    }
+    const increment = (id: SHOES["_id"]) => {
+        setCount((prevCounts: any) => {
+            const existingCount = prevCounts.find((item: any) => item.id === id);
+
+            if (existingCount) {
+                return prevCounts.map((item: any) =>
+                    item.id === id ? { ...item, count: item.count + 1 } : item
+                );
+            } else {
+                return [...prevCounts, { id: id, count: 1 }];
+            }
+        });
+    };
+    const decrement = (id: SHOES["_id"]) => {
+        setCount((prevCounts: any) => {
+            const existingCount = prevCounts.find((item: any) => item.id === id);
+
+            if (existingCount) {
+                return prevCounts.map((item: any) =>
+                    item.id === id ? { ...item, count: item.count - 1 } : item
+                );
+            } else {
+                return [...prevCounts, { id: id, count: 1 }];
+            }
+        });
+    };
 
     return (
-        <ShopContext.Provider value={{productsInCart, addToCart, removeFromCart, favorites, addToFavs, removeFromFavs, increment, decrement, count}}>
-                {children}
+        <ShopContext.Provider value={{ productsInCart, addToCart, removeFromCart, favorites, addToFavs, removeFromFavs, increment, decrement, count }}>
+            {children}
         </ShopContext.Provider>
     )
 

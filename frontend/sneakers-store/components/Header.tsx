@@ -10,7 +10,7 @@ import { useShopContext } from "@/context/shopContext";
 
 function Header() {
     const [menuClicked, setMenuClicked] = useState(false)
-    const { productsInCart, favorites} = useShopContext()
+    const { productsInCart, favorites } = useShopContext()
 
     const handleMenuClicked = () => {
         setMenuClicked(!menuClicked)
@@ -26,7 +26,7 @@ function Header() {
         <>
             <header className="flex p-2 mt-5 justify-between items-center lg:p-4">
                 <h1 className="text-4xl text-gray-950 font-extrabold cursor-pointer">
-                   <Link href="/"> S&S. </Link>
+                    <Link href="/"> S&S. </Link>
                 </h1>
 
                 <div className='flex items-center space-x-4 lg:hidden'>
@@ -40,13 +40,19 @@ function Header() {
                         <li>
                             <Link className='text-red-700 font-bold' href="/sale">SALE🔥</Link>
                         </li>
+                        <li>
+                            <Link className='hover:text-blue-600' href="/herren">Herren</Link>
+                        </li>
+                        <li>
+                            <Link className='hover:text-blue-600' href="/damen">Damen</Link>
+                        </li>
 
-                        <Dropdown />
+                        {/* <Dropdown /> */}
                         <li>
                             <Link className='hover:text-blue-600' href="/shopping-cart">Warenkorb ({productsInCart.length}) </Link>
                         </li>
                         <li>
-                            <Link className='hover:text-blue-600' href="/favourites"> {favorites.length > 0 ? 'Favoriten ❤️' : 'Favoriten' } </Link>
+                            <Link className='hover:text-blue-600' href="/favourites"> {favorites.length > 0 ? 'Favoriten ❤️' : 'Favoriten'} </Link>
                         </li>
                     </ul>
                 </nav>

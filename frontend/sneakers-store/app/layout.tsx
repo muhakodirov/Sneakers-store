@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import { ShopContextProvider } from "@/context/shopContext";
+import { FilterContextProvider } from "@/context/filterContext";
 
 
 
@@ -20,8 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="container">
         <ShopContextProvider>
-          <Header />
-          {children}
+          <FilterContextProvider>
+            <Header />
+            {children}
+          </FilterContextProvider>
         </ShopContextProvider>
       </body>
     </html>
