@@ -1,6 +1,8 @@
 "use client"
 import { SHOES } from "@/components/sale-components/ListOfProducts";
 import { createContext, ReactNode, useContext, useState } from "react";
+import { useToast } from "@/hooks/use-toast"
+
 
 const ShopContext = createContext<any>([]);
 
@@ -14,9 +16,23 @@ export function ShopContextProvider({ children }: { children: ReactNode }) {
     const [favorites, setFavorites] = useState<SHOES[]>([]);
     const [productsInCart, setProductsInCart] = useState<SHOES[]>([]);
     const [count, setCount] = useState<any>([]);
-
-    const addToCart = (product: SHOES) => {
-        setProductsInCart((prevProducts) => [...prevProducts, product])
+    const { toast } = useToast()
+    const addToCart = (product: SHOES, size: number | null) => {
+        if (productsInCart.includes(product)) {
+            return (
+                toast({
+                    title: "Das Produkt ist schon da!",
+                    description: "Du hast es schon in dem Korb hinzugefügt 😊",
+                  })
+            )
+        } else if (size == null) {
+                toast({
+                    title: "Wählen Sie erstmal die Größe!",
+                    variant: "destructive",
+                })
+        } else {
+            setProductsInCart((prevProducts) => [...prevProducts, product])
+        }
     }
 
     const removeFromCart = (productId: SHOES["_id"]) => {

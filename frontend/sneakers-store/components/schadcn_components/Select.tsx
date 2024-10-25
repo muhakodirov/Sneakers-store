@@ -12,7 +12,7 @@ import {
 import { useFilterContext } from "@/context/filterContext"
 import { useEffect } from "react"
 
-export function SelectSize({ size, pageType }: { size?: number[], pageType: string }) {
+export function SelectSize({ size, pageType }: { size?: number[], pageType?: string }) {
   const { setSizeFilter, sizeFilter, brandFilter } = useFilterContext();
   const router = useRouter();
 
@@ -22,7 +22,7 @@ export function SelectSize({ size, pageType }: { size?: number[], pageType: stri
       if (brandFilter) {
         router.push(`${pageType}?brand=${brandFilter}`);
       } else {
-        router.push(pageType);
+        pageType && router.push(pageType);
       }
     } else if (sizeFilter && !brandFilter) {
       router.push(`${pageType}?size=${encodeURIComponent(sizeFilter)}`);

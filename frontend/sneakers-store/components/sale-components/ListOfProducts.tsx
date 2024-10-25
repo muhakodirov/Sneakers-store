@@ -1,12 +1,11 @@
-import Link from "next/link";
+import NothingFound from "../NoDatas";
 import ProductCard from "../ProductCard";
-import { useFilterContext } from "@/context/filterContext";
 
 export type SHOES = {
 
   _id: string,
   name: string,
-  size: number[],
+  size?: number[],
   price: number,
   description: string,
   category: string,
@@ -20,10 +19,15 @@ export type SHOES = {
 
 export default async function ListOfProducts({ shoes }: { shoes: SHOES[] }) {
 
+  if (shoes.length <= 0) {
+    return <NothingFound />
+
+  }
+
   return (
-    <div className="rounded-md border bg-card text-card-foreground shadow-sm mx-3">
-      <div className="flex flex-col space-y-1.5 p-6">
-        <div className="flex flex-col lg:flex-row justify-evenly p-6 col-span-1 lg:row-span-3 flex-wrap gap-12 text-2xl font-semibold leading-none tracking-tight">
+    <div className="rounded-md  mx-3">
+      <div className="flex flex-col space-y-1.5">
+        <div className="flex flex-col lg:flex-row justify-evenly col-span-1 lg:row-span-3 flex-wrap gap-12 text-2xl font-semibold leading-none tracking-tight">
           {shoes?.map(shoe => <ProductCard
             id={shoe._id}
             category={shoe.category}

@@ -3,9 +3,11 @@ import Image from 'next/image'
 import React from 'react'
 import { useShopContext } from "@/context/shopContext";
 import Link from 'next/link';
+import { useFilterContext } from '@/context/filterContext';
 
 export default function CartLists({ category, id, name, size }: { id: string, name: string, size: number[], category: string }) {
     const { increment, decrement, count, removeFromCart } = useShopContext()
+    const { selectedSize } = useFilterContext()
     const countFiltered = count.find((count: any) => count.id === id) || { count: 1 };
 
     return (
@@ -25,7 +27,7 @@ export default function CartLists({ category, id, name, size }: { id: string, na
                 <div className=' flex flex-col ml-9 text-xl text-left'>
                     <p className='font-bold text-3xl'>{category?.toUpperCase()} {name}</p>
                     <div className=' mt-14' >
-                        <p>Größe: {size[0]} </p>
+                        <p>Größe: {selectedSize} </p>
                         <p>Menge: {countFiltered?.count} </p>
                         <div className='absolute bottom-0 end-0'>
                             <div className='absolute end-0 bottom-16'>

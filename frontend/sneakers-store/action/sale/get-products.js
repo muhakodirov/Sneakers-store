@@ -1,6 +1,6 @@
+"use server"
 export async function getProducts() {
-    "use server"
-    const res = await fetch("http://localhost:3000/sale/get-insale-products", { cache: "force-cache" })
+    const res = await fetch("http://localhost:3000/sale/get-insale-products", { cache: "no-cache" })
     const data = await res.json()
     return data
 }

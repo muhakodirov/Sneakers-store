@@ -12,8 +12,8 @@ export default function FavouritesPage() {
         <div className="text-left mb-4 lg:mb-0 text-lg lg:text-4xl text-red-700 font-bold">
         {favorites.length <= 0 ? <p className="text-4xl font-bold"> Kein Favoriten :(</p> : <p className="text-4xl font-bold"> Favoriten </p>}
         </div>
-        <div className="float-right w-2/3 flex flex-wrap">
-          {favorites.map((favProduct) => <ListOfProducts shoes={[favProduct]} />)}
+        <div className="flex gap-10 flex-wrap">
+          {favorites.map((favProduct:any) => <ListOfProducts shoes={[favProduct]} />)}
         </div>
     </div>
   )

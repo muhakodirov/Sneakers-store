@@ -1,9 +1,10 @@
-'use-client'
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import { ShopContextProvider } from "@/context/shopContext";
 import { FilterContextProvider } from "@/context/filterContext";
+import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 
 
@@ -24,6 +25,8 @@ export default function RootLayout({
           <FilterContextProvider>
             <Header />
             {children}
+            <Toaster />
+            <Footer />
           </FilterContextProvider>
         </ShopContextProvider>
       </body>

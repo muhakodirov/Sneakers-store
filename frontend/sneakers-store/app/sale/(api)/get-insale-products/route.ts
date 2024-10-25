@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
     if (brand) query.category = brand;
     if (size) query.size = { $in: [parseInt(size)] };
     const filteredProducts = await Product.find(query);
+    console.log(filteredProducts)
     return NextResponse.json({ success: true, data: filteredProducts }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ success: false, message: 'Serverfehler' }, { status: 500 });

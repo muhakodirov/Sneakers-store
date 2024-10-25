@@ -22,7 +22,7 @@ export default function Rechnung() {
     gesamtsumme = (Number(versandkosten) + Number(bestellwert) - rabatte)
 
     return (
-        <div className="fixed right-[265px]">
+        <div className="w-2/3 float-right">
             <div className=" rounded-lg ">
                 <div className=" text-left text-xl">
                     <div className="flex justify-between my-5">
@@ -49,19 +49,7 @@ export default function Rechnung() {
                     </button>
                 </div>
                 <p className="my-2">Zahlungsmethoden:</p>
-                <div className="flex flex-wrap gap-8">
-                    <Image
-                        src="/bitcoin.png"
-                        alt="VISA"
-                        width={50}
-                        height={50}
-                    />
-                    <Image
-                        src="/solana.png"
-                        alt="VISA"
-                        width={50}
-                        height={50}
-                    />
+                <div className="flex flex-wrap gap-8 justify-evenly">
                     <Image
                         src="/visa.webp"
                         alt="VISA"

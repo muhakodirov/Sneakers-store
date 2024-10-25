@@ -20,15 +20,15 @@ export default async function SalePage({ searchParams }: { searchParams: any }) 
 
   return (
     <div className=" text-center justify-center content-center">
-      <p className={`${roboto.className} mt-24 text-5xl text-red-700`}>
+      <p className={`${roboto.className} mt-24 text-3xl lg:text-5xl text-red-700`}>
         SALE
       </p>
 
-      <div className="lg:flex mt-16 justify-center">
-        <div className="lg:w-1/3">
+      <div className="block lg:flex mt-16 justify-center">
+        <div className="w-auto lg:w-1/3">
           <Sidebar page='/sale' />
         </div>
-        <div className="lg:w-2/3">
+        <div className="w-auto lg:w-2/3">
           <Suspense fallback={<Loading />}>
             <ListOfProducts shoes={data} />
           </Suspense>
