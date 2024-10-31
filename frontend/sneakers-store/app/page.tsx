@@ -15,7 +15,7 @@ const roboto = Roboto({
 const OPTIONS: EmblaOptionsType = { loop: true }
 
 export default async function Home() {
- const {data} = await getProducts()
+  const { data } = await getProducts()
 
   return (
     <>
@@ -25,15 +25,15 @@ export default async function Home() {
           <EmblaCarousel options={OPTIONS} />
         </div>
         <div className=" mt-40 lg:mt-52">
-          <p className={`${roboto.className} mb-16 text-left text-md lg:text-2xl`}>
+          <p className={`${roboto.className} mb-12 text-left text-md lg:text-2xl`}>
             Bestsellers
           </p>
           <CarouselComponent data={data} />
         </div>
         <hr className="mt-44" />
         <div className="flex flex-col text-center gap-8 items-center space-y-8 lg:space-y-0  lg:flex-row my-52 justify-center">
-          <HomeCard title = "Herren" url="/herren"/>
-          <HomeCard title = "Damen"  url="/damen"/>
+          <HomeCard title="Herren" url="/herren" />
+          <HomeCard title="Damen" url="/damen" />
         </div>
       </div>
     </>

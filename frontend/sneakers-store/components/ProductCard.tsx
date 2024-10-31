@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -10,27 +11,29 @@ type PROPS = {
   category: string
 }
 
-export default function ProductCard({id, category, name, price, imageUrl}: PROPS) {
+export default function ProductCard({ id, category, name, price, imageUrl }: PROPS) {
   return (
-    <div>
-    <div className=" overflow-hidden rounded-md w-52 h-52 border content-center bg-card text-card-foreground hover:shadow-lg transition ">
-          <div className="">
-            <Link href={`/${id}`}>
-              <Image
-                className="rounded-md ltransition-transform duration-300 ease-in-out hover:scale-110"
-                src="/image.webp" //imageUrl
-                width={500}
-                height={500}
-                alt="Picture of the author"
-              />
-            </Link>
+    <div className="flex flex-col w-full max-w-sm mx-auto">
+      <div className="overflow-hidden rounded-md aspect-square border bg-card text-card-foreground hover:shadow-lg transition">
+        <Link href={`/${id}`}>
+          <div className="relative w-full h-full">
+            <Image
+              className="object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+              src="/image.webp"
+              layout="fill"
+              alt={`${category} ${name}`}
+            />
           </div>
-    </div>
-    <div className='text-left text-[14px] mt-2 font-normal text-slate-600'>
-          <b className=''> {category?.toUpperCase()} {name} </b> <br />
-         <span className='text-[18px] text-green-900 font-bold'> {price} € </span> <br />
-    </div>
-
+        </Link>
+      </div>
+      <div className='mt-2 text-left'>
+        <h3 className='text-sm sm:text-base font-semibold text-slate-800'>
+          {category?.toUpperCase()} {name}
+        </h3>
+        <p className='text-md sm:text-xl text-green-900 font-bold mt-1'>
+          {price} €
+        </p>
+      </div>
     </div>
   )
 }

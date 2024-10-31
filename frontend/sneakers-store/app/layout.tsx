@@ -20,15 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="container">
-        <ShopContextProvider>
-          <FilterContextProvider>
+      <body className="container overflow-x-hidden">
+        <FilterContextProvider>
+          <ShopContextProvider>
             <Header />
             {children}
             <Toaster />
             <Footer />
-          </FilterContextProvider>
-        </ShopContextProvider>
+          </ShopContextProvider>
+        </FilterContextProvider>
       </body>
     </html>
   );

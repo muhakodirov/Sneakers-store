@@ -22,7 +22,7 @@ export default async function DamenPage({ searchParams }: { searchParams: any })
 
   return (
     <div className=" text-center justify-center content-center">
-      <p className={`${roboto.className} mt-24 text-5xl text-red-700`}>
+      <p className={`${roboto.className} mt-24 text-3xl lg:text-5xl text-red-700`}>
         DAMEN
       </p>
       <div className="lg:flex mt-16 justify-center">

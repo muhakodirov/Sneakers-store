@@ -2,42 +2,53 @@
 import { SHOES } from "@/components/sale-components/ListOfProducts";
 import { createContext, ReactNode, useContext, useState } from "react";
 import { useToast } from "@/hooks/use-toast"
+import { useFilterContext } from "./filterContext";
+import Link from "next/link";
 
 
 const ShopContext = createContext<any>([]);
 
-// type ValueProps = {
-//     productsInCart: SHOES[],
-//     addToCart: (product: SHOES) => void,
-//     removeFromCart: (productId: SHOES["_id"]) => void
-// }
 
 export function ShopContextProvider({ children }: { children: ReactNode }) {
+    const { deleteSizeSelect } = useFilterContext()
     const [favorites, setFavorites] = useState<SHOES[]>([]);
     const [productsInCart, setProductsInCart] = useState<SHOES[]>([]);
     const [count, setCount] = useState<any>([]);
     const { toast } = useToast()
-    const addToCart = (product: SHOES, size: number | null) => {
+    const addToCart = (product: SHOES, size: any | null, onStock) => {
         if (productsInCart.includes(product)) {
             return (
                 toast({
                     title: "Das Produkt ist schon da!",
                     description: "Du hast es schon in dem Korb hinzugefügt 😊",
-                  })
+                })
             )
-        } else if (size == null) {
+        } else if (!size) {
+            toast({
+                title: "Wählen Sie erstmal die Größe!",
+                variant: "destructive",
+            })
+        } else {
+            if (onStock) {
+                setProductsInCart((prevProducts) => [...prevProducts, product])
                 toast({
-                    title: "Wählen Sie erstmal die Größe!",
+                    title: "Das Produkt wurde zu deinem Korb hinzugefügt 😍",
+                    variant: "success",
+                    description: <Link className="text-sm lg:text-lg rounded-lg font-bold text-green-600 underline" href="/shopping-cart"> Dein Warenkorb</Link>,
+                })
+            } else {
+                toast({
+                    title: "Das Produkt ist leider in dieser Größe nicht verfügbar 🙁",
                     variant: "destructive",
                 })
-        } else {
-            setProductsInCart((prevProducts) => [...prevProducts, product])
+            }
         }
     }
 
     const removeFromCart = (productId: SHOES["_id"]) => {
         const newProducts = productsInCart.filter(product => product._id !== productId)
         setProductsInCart(newProducts)
+        deleteSizeSelect(productId)
     }
 
     const addToFavs = (product: SHOES) => {

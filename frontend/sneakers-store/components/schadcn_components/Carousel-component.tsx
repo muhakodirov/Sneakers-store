@@ -16,9 +16,8 @@ type DATA = {
 }
 
 
-export default function CarouselComponent({data}:{data:DATA[]}) {
+export default function CarouselComponent({ data }: { data: DATA[] }) {
   const [currentIndex, setCurrentIndex] = useState(0)
-console.log(data)
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length)
   }
@@ -57,13 +56,13 @@ console.log(data)
         </button>
       </div>
       <div className="mt-4 sm:mt-6 text-center">
-  <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{currentItem?.name}</h3>
-  <p className="mt-1 text-sm sm:text-base text-gray-600">{currentItem?.description}</p>
-  <p className="mt-2 text-lg sm:text-xl font-bold text-gray-900">${currentItem?.price.toFixed(2)}</p>
-  <div className="mt-2 text-sm sm:text-base text-gray-500">
-    {currentIndex + 1} / {data.length}
-  </div>
-</div>
+        <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{currentItem?.name}</h3>
+        <p className="mt-1 text-sm sm:text-base text-gray-600">{currentItem?.description}</p>
+        <p className="mt-2 text-lg sm:text-xl font-bold text-gray-900">${currentItem?.price.toFixed(2)}</p>
+        <div className="mt-2 text-sm sm:text-base text-gray-500">
+          {currentIndex + 1} / {data.length}
+        </div>
+      </div>
     </div>
   )
 }

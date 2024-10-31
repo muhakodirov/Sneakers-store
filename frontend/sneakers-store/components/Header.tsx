@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Dropdown } from './schadcn_components/Dropdown'
 import { IoMenu } from "react-icons/io5";
 import { TiShoppingCart } from "react-icons/ti";
-import { MdFavoriteBorder } from "react-icons/md";
+import { MdOutlineFavorite } from "react-icons/md";
 import closeDropdown from '@/hooks/closeDropdown';
 import { useShopContext } from "@/context/shopContext";
 
@@ -26,12 +26,16 @@ function Header() {
         <>
             <header className="flex p-2 mt-5 justify-between items-center lg:p-4">
                 <h1 className="text-4xl text-gray-950 font-extrabold cursor-pointer">
-                    <Link href="/"> S&S. </Link>
+                    <Link href="/"> MK. </Link>
                 </h1>
 
-                <div className='flex items-center space-x-4 lg:hidden'>
-                    <MdFavoriteBorder className=' cursor-pointer' />
-                    <TiShoppingCart className=' cursor-pointer' />
+                <div className='flex text-2xl items-center space-x-6 lg:hidden'>
+                    <Link href="/favourites">
+                        <MdOutlineFavorite className={`cursor-pointer ${(favorites.length > 0) ? ' text-red-500 ' : 'text-gray-400 '}`} />
+                    </Link>
+                    <Link href="/shopping-cart">
+                        <TiShoppingCart className=' cursor-pointer' />
+                    </Link>
                     <IoMenu className='absolut cursor-pointer' onClick={handleMenuClicked} />
                 </div>
 
@@ -59,28 +63,15 @@ function Header() {
 
             </header>
             {menuClicked &&
-                // <div className='relative'>
                 <div ref={dropdownRef} className=' border backdrop-blur-lg rounded-sm fixed right-5 top-20 p-4 text-xl text-left z-50'>
                     <Link className='font-bold' href="/sale">SALE🔥</Link>
-                    <div className='space-y-2 mt-3'>
-                        <details className='' open={false}>
-                            <summary className='font-bold'> Damen </summary>
-                            <ul className='text-md'>
-                                <li>Nike</li>
-                                <li>Adidas</li>
-                                <li>New Balance</li>
-                            </ul>
-                        </details>
-                        <details className='text-wrap' open={false}>
-                            <summary className='font-bold'> Herren </summary>
-                            <ul className=' text-md'>
-                                <li>Nike</li>
-                                <li>Adidas</li>
-                                <li>Puma</li>
-                                <li>New Balance</li>
-                            </ul>
-                        </details>
+                    <div className='my-3'>
+                        <Link href="/damen">Damen</Link>
                     </div>
+                    <div>
+                        <Link href="/herren">Herren</Link>
+                    </div>
+
                 </div>
             }
             <hr />

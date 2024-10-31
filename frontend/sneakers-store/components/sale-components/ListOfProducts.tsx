@@ -25,17 +25,21 @@ export default async function ListOfProducts({ shoes }: { shoes: SHOES[] }) {
   }
 
   return (
-    <div className="rounded-md  mx-3">
-      <div className="flex flex-col space-y-1.5">
-        <div className="flex flex-col lg:flex-row justify-evenly col-span-1 lg:row-span-3 flex-wrap gap-12 text-2xl font-semibold leading-none tracking-tight">
-          {shoes?.map(shoe => <ProductCard
-            id={shoe._id}
-            category={shoe.category}
-            name={shoe.name}
-            price={shoe.price}
-            imageUrl={shoe.imageUrl} />)}
+    <>
+      <div className="mx-auto mt-3 lg:mt-0 px-3">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-3 lg:gap-12">
+          {shoes?.map(shoe => (
+            <ProductCard
+              key={shoe._id}
+              id={shoe._id}
+              category={shoe.category}
+              name={shoe.name}
+              price={shoe.price}
+              imageUrl={shoe.imageUrl}
+            />
+          ))}
         </div>
       </div>
-    </div>
+    </>
   )
 }
