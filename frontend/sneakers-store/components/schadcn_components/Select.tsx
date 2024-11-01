@@ -29,7 +29,7 @@ export function SelectSize({ size, pageType }: { size?: number[], pageType?: str
     } else if (sizeFilter && brandFilter) {
       router.push(`${pageType}?brand=${encodeURIComponent(brandFilter)}&size=${encodeURIComponent(sizeFilter)}`);
     }
-  }, [sizeFilter, brandFilter, router]);
+  }, [sizeFilter, brandFilter, router, pageType, setSizeFilter]);
 
   return (
     <Select value={sizeFilter} onValueChange={setSizeFilter}>
@@ -73,7 +73,7 @@ export function SelectBrand({ pageType }: { pageType: string }) {
     } else if (brandFilter && sizeFilter) {
       router.push(`${pageType}?brand=${encodeURIComponent(brandFilter)}&size=${encodeURIComponent(sizeFilter)}`);
     }
-  }, [brandFilter, sizeFilter, router]);
+  }, [brandFilter, sizeFilter, router, pageType, setBrandFilter]);
 
   return (
     <Select value={brandFilter} onValueChange={setBrandFilter}>

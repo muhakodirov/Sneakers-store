@@ -15,7 +15,7 @@ export function ShopContextProvider({ children }: { children: ReactNode }) {
     const [productsInCart, setProductsInCart] = useState<SHOES[]>([]);
     const [count, setCount] = useState<any>([]);
     const { toast } = useToast()
-    const addToCart = (product: SHOES, size: any | null, onStock) => {
+    const addToCart = (product: SHOES, size: any | null, onStock:string) => {
         if (productsInCart.includes(product)) {
             return (
                 toast({

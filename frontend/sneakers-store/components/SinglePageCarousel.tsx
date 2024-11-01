@@ -21,7 +21,7 @@ export function SinglePageCarouselComponent({ imgUrl }: { imgUrl?: string }): Re
                 <CardContent className="flex aspect-square items-center justify-center p-2 sm:p-4 lg:p-6">
                   <Image
                     className="rounded-lg w-full h-full object-cover"
-                    src={(imgUrl?.includes('amazon')) ? '/image.webp' : imgUrl}
+                    src={(imgUrl?.includes('amazon')) ? '/image.webp' : imgUrl as string}
                     width={500}
                     height={500}
                     alt="Product image"

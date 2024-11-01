@@ -1,4 +1,5 @@
 'use client'
+import { SignIn } from "@/components/SignIn"
 import Form from "./(components)/CreateProduct-Form"
 import FormBestsellers from "./(components)/CreateProduct_Bestsellers-Form"
 import { usePathname, useRouter } from "next/navigation"
@@ -8,9 +9,9 @@ function AdminPage() {
     const router = useRouter()
     const pathname = usePathname()
 
-    // if (pathname.includes('/admin')) {
-    //     return "You are not allowed"
-    // }
+    if (pathname.includes('/admin')) {
+        return <SignIn />
+    }
 
 
     return (

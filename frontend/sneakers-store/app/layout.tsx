@@ -5,7 +5,8 @@ import { ShopContextProvider } from "@/context/shopContext";
 import { FilterContextProvider } from "@/context/filterContext";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
-
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 
 export const metadata: Metadata = {
